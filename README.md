@@ -15,15 +15,11 @@ erDiagram
 
     Note {
         string uuid PK
+        string user_uuid FK
+        datetime created_at
         string title
         string body
         bool public
-    }
-
-    NoteCreator {
-        string user_uuid FK,PK
-        string note_uuid FK,PK
-        datetime created_at
     }
 
     NoteHistory {
@@ -108,8 +104,7 @@ erDiagram
         bool unfollowed
     }
 
-    User |o--o{ NoteCreator : "create"
-    NoteCreator ||--|| Note : "create"
+    User |o--o{ Note : "create"
     NoteHistory }o--|| Note : "update"
     User ||--o{ Like : "like"
     Like }o--|| Note : "like"
