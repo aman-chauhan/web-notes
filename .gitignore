@@ -1,0 +1,2 @@
+protobuf/go_pb_lib/*.pb.go
+protobuf/py_pb_lib/*_pb2.py
